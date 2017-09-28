@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    @Html.ActionLink("Loja Razor", "Index", "Home", null, new { @class = "navbar-brand" })
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contato", "Home")</li>
+                </ul>
+                <p class="navbar-text navbar-right">
+                    @if (Session["usuarioLogado"] != null)
+                    {
+                        @:Bem-Vindo @Session["usuarioLogado"] @Html.ActionLink("Logout", "Logout", "Autenticacao")
+                    }
+                    else
+                    {
+                        @:Olá Visitante @Html.ActionLink("Login", "Index", "Autenticacao") ou @Html.ActionLink("Cadastre-se", "Form", "Usuarios") &nbsp;
+                    }
+                </p>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="well">
+                    <ul class="list-unstyled">
+                        @foreach (var departamento in ViewBag.Departamentos)
+                        {
+                            <li>@departamento.Nome</li>
+                            <ul>
+                                @foreach (var categoria in departamento.Categorias)
+                                {
+                                    <li>@categoria.Nome</li>
+                                }
+                            </ul>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="jumbotron">
+                    <h2>Queima de estoque</h2>
+                    <p>Promoção na seção de monitores</p>
+                </div>
+                <div class="row">
+                    @foreach (var produto in ViewBag.Produtos)
+                    {
+                        <div class="col-md-4">
+                            <h2>@produto.Nome</h2>
+                            <p>@produto.Descricao</p>
+                            <p>@produto.Preco</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
