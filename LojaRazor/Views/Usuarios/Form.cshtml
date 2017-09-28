@@ -2,39 +2,58 @@
     <fieldset>
         <legend>Dados Pessoais</legend>
 
-        <label for="nome">Nome: </label>
-        <input id="nome" type="text" name="usuario.Nome" />
+        <div class="form-group">
+            <label for="nome">Nome: </label>
+            <input class="form-control input-sm" id="nome" type="text" name="usuario.Nome" />
+        </div>
 
-        <label for="email">E-mail: </label>
-        <input id="email" type="text" name="usuario.Email" />
+        <div class="form-group">
+            <label for="email">E-mail: </label>
+            <input class="form-control input-sm" id="email" type="text" name="usuario.Email" />
+        </div>
 
-        <label for="senha">Senha:</label>
-        <input id="senha" type="password" name="usuario.Senha" />
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input class="form-control input-sm" id="senha" type="password" name="usuario.Senha" />
+        </div>
 
-        <label for="dataDeNascimento">Data de Nascimento: </label>
-        <input id="dataDeNascimento" type="text" name="usuario.DataDeNascimento" />
+        <div class="form-group">
+            <label for="dataDeNascimento">Data de Nascimento: </label>
+            <input class="form-control input-sm" id="dataDeNascimento" type="text" name="usuario.DataDeNascimento" />
+        </div>
     </fieldset>
 
     <fieldset>
         <legend>Dados de Entrega</legend>
 
-        <label for="endereco">Endereço: </label>
-        <input id="endereco" type="text" name="usuario.Endereco" />
+        <div class="form-group">
+            <label for="endereco">Endereço: </label>
+            <input class="form-control input-sm" id="endereco" type="text" name="usuario.Endereco" />
+        </div>
 
-        <label for="complemento">Complemento: </label>
-        <input id="complemento" type="text" name="usuario.Complemento" />
+        <div class="form-group">
+            <label for="complemento">Complemento: </label>
+            <input class="form-control input-sm" id="complemento" type="text" name="usuario.Complemento" />
+        </div>
 
-        <label for="cep">CEP: </label>
-        <input id="cep" type="text" name="usuario.CEP" />
+        <div class="form-group">
+            <label for="cep">CEP: </label>
+            <input class="form-control input-sm" id="cep" type="text" name="usuario.CEP" />
+        </div>
 
-        <label for="observacoes">Observações: </label>
-        <textarea id="observacoes" name="usuario.Observacoes"></textarea>
+        <div class="form-group">
+            <label for="observacoes">Observações: </label>
+            <textarea class="form-control input-sm" id="observacoes" name="usuario.Observacoes"></textarea>
+        </div>
     </fieldset>
-    <div>
-        <input name="usuario.RecebePromocoes" type="checkbox" value="true" />
-        Desejo receber informações sobre promoções
+
+    <div class="checkbox">
+        <label>
+            <input name="usuario.RecebePromocoes" type="checkbox" value="true" />
+            Desejo receber informações sobre promoções
+        </label>
     </div>
 
-    <input type="submit" value="Cadastrar" class="btn btn-large" />
+    <input type="submit" value="Cadastrar" class="btn btn-primary btn-large" />
 
 </form>
