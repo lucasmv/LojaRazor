@@ -9,33 +9,7 @@
     <link href="~/Content/Style.css" rel="stylesheet" />
 </head>
 <body>
-
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                @Html.ActionLink("Loja Razor", "Index", "Home", null, new { @class = "navbar-brand" })
-            </div>
-            <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                <li>@Html.ActionLink("Contato", "Contato", "Home")</li>
-            </ul>
-            <p class="navbar-text navbar-right">
-                @if (Session["usuarioLogado"] != null)
-                {
-                    @:Bem-Vindo @Session["usuarioLogado"] @Html.ActionLink("Logout", "Logout", "Autenticacao")
-                    }
-                else
-                {
-                    @:Olá Visitante @Html.ActionLink("Login", "Index", "Autenticacao") ou @Html.ActionLink("Cadastre-se", "Form", "Usuarios") &nbsp;
-                    }
-            </p>
-        </div>
-    </nav>
-
-
-
-
-
+    @Html.Partial("_MenuSuperior")
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
@@ -46,5 +20,6 @@
             </div>
         </div>
     </div>
+    @RenderSection("Scripts", false)
 </body>
 </html>

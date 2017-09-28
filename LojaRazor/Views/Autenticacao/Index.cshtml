@@ -1,25 +1,37 @@
-﻿<div class="hero-unit span6">
-    
+﻿<div class="jumbotron col-md-6">
+
     <h2>Login</h2>
 
     <p>Já Possui Cadastro? Então faça seu login</p>
     <form action="@Url.Action("Autentica", "Autenticacao")">
-        <input type="text" class="input-block-level" placeholder="E-mail" />
-
-        <input type="password" class="input-block-level" placeholder="Senha" />
-
-        <input type="submit" class="btn btn-large btn-primary" value="Fazer Login" />
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="E-mail" required/>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Senha" required/>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-large btn-primary" value="Fazer Login" />
+        </div>
     </form>
 </div>
 
-<div class="hero-unit span6">
+<div class="jumbotron col-md-6">
     <h2>Novo Usuário?</h2>
 
     <p>Se você ainda não tem um cadastro, informe qual é o e-mail que você deseja associar com sua conta</p>
 
     <form action="@Url.Action("Form", "Usuarios")">
-        <input type="text" class="input-block-level" placeholder="E-mail" name="Email"/>
-
-        <input type="submit" class="btn btn-large btn-primary" value="Criar Conta" />
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="E-mail" name="Email" />
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-large btn-primary" value="Criar Conta" />
+        </div>
     </form>
 </div>
+
+@section Scripts{
+    <script src="~/scripts/jquery-3.2.1.js"></script>
+    <script src="~/scripts/jquery.validate.js"></script>
+}
