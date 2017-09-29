@@ -1,25 +1,38 @@
-﻿<form action="@Url.Action("Cadastra")" method="post">
+﻿@model LojaRazor.Models.Usuario
+
+@using (Html.BeginForm("Cadastra", "Usuarios", FormMethod.Post))
+{
     <fieldset>
         <legend>Dados Pessoais</legend>
 
         <div class="form-group">
-            <label for="nome">Nome: </label>
-            <input class="form-control input-sm" id="nome" type="text" name="usuario.Nome" />
+            @Html.LabelFor(x => x.Nome)
+            @Html.TextBoxFor(x => x.Nome, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            <label for="email">E-mail: </label>
-            <input class="form-control input-sm" id="email" type="text" name="usuario.Email" />
+            @Html.LabelFor(x => x.Sexo)
+            @Html.EnumDropDownListFor(x => x.Sexo, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            <label for="senha">Senha:</label>
-            <input class="form-control input-sm" id="senha" type="password" name="usuario.Senha" />
+            @Html.LabelFor(x => x.Email)
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            <label for="dataDeNascimento">Data de Nascimento: </label>
-            <input class="form-control input-sm" id="dataDeNascimento" type="text" name="usuario.DataDeNascimento" />
+            @Html.LabelFor(x => x.Senha)
+            @Html.PasswordFor(x => x.Senha, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.DataDeNascimento)
+            @Html.TextBoxFor(x => x.DataDeNascimento, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.DataDeNascimento, "", new { @class = "text-danger" })
         </div>
     </fieldset>
 
@@ -27,33 +40,42 @@
         <legend>Dados de Entrega</legend>
 
         <div class="form-group">
-            <label for="endereco">Endereço: </label>
-            <input class="form-control input-sm" id="endereco" type="text" name="usuario.Endereco" />
+            @Html.LabelFor(x => x.Endereco)
+            @Html.TextBoxFor(x => x.Endereco, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            <label for="complemento">Complemento: </label>
-            <input class="form-control input-sm" id="complemento" type="text" name="usuario.Complemento" />
+            @Html.LabelFor(x => x.Complemento)
+            @Html.TextBoxFor(x => x.Complemento, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.Complemento, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            <label for="cep">CEP: </label>
-            <input class="form-control input-sm" id="cep" type="text" name="usuario.CEP" />
+            @Html.LabelFor(x => x.CEP)
+            @Html.TextBoxFor(x => x.CEP, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.CEP, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">
-            <label for="observacoes">Observações: </label>
-            <textarea class="form-control input-sm" id="observacoes" name="usuario.Observacoes"></textarea>
+            @Html.LabelFor(x => x.Observacoes)
+            @Html.TextAreaFor(x => x.Observacoes, new { @class = "form-control input-sm" })
+            @Html.ValidationMessageFor(model => model.Observacoes, "", new { @class = "text-danger" })
         </div>
     </fieldset>
 
     <div class="checkbox">
         <label>
-            <input name="usuario.RecebePromocoes" type="checkbox" value="true" />
+            @Html.CheckBoxFor(x => x.RecebePromocoes)
             Desejo receber informações sobre promoções
         </label>
     </div>
 
     <input type="submit" value="Cadastrar" class="btn btn-primary btn-large" />
+}
 
-</form>
+@section Scripts{
+    <script src="~/scripts/jquery-1.12.4.min.js"></script>
+    <script src="~/scripts/jquery.validate.min.js"></script>
+    <script src="~/scripts/jquery.validate.unobtrusive.min.js"></script>
+}

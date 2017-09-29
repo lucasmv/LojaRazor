@@ -8,7 +8,7 @@ namespace LojaRazor.Controllers
     {
         public ActionResult Form(string email)
         {
-            Usuario usuario = new Usuario()
+            var usuario = new Usuario()
             {
                 Email = email
             };
@@ -16,11 +16,12 @@ namespace LojaRazor.Controllers
             return View(usuario);
         }
 
+        [HttpPost]
         public ActionResult Cadastra(Usuario usuario)
         {
             if (ModelState.IsValid)
             {
-                UsuariosDAO dao = new UsuariosDAO();
+                var dao = new UsuariosDAO();
 
                 dao.Adiciona(usuario);
 
@@ -28,10 +29,9 @@ namespace LojaRazor.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
-            else
-            {
-                return View("Form", usuario);
-            }
+
+            return View("Form", usuario);
+
         }
 
     }
