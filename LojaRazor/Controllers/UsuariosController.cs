@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace LojaRazor.Controllers
 {
-    public class UsuariosController : Controller
+    public class UsuariosController : BaseController
     {
         public ActionResult Form(string email)
         {

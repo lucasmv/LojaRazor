@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LojaRazor.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,8 +16,8 @@ namespace LojaRazor
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "{culture}/{controller}/{action}/{id}",
+                defaults: new { culture = CultureHelper.GetDefaultCulture(), controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

@@ -1,9 +1,10 @@
 ﻿using LojaRazor.DAO;
+using LojaRazor.Util;
 using System.Web.Mvc;
 
 namespace LojaRazor.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
 
         public ActionResult Index()
@@ -24,5 +25,15 @@ namespace LojaRazor.Controllers
         {
             return View();
         }
+
+        #region Gerenciar Idioma
+        public ActionResult SetCulture(string culture)
+        {
+            culture = CultureHelper.GetImplementedCulture(culture);
+            RouteData.Values["culture"] = culture;
+
+            return RedirectToAction("Index");
+        }
+        #endregion
     }
 }

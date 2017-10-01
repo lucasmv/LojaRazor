@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace LojaRazor.Controllers
 {
-    public class MenuController : Controller
+    public class MenuController : BaseController
     {
         public ActionResult Index()
         {

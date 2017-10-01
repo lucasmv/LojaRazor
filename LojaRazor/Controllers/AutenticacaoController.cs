@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 namespace LojaRazor.Controllers
 {
-    public class AutenticacaoController : Controller
+    public class AutenticacaoController : BaseController
     {
         public ActionResult Index()
         {
