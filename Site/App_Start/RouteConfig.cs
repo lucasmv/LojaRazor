@@ -1,8 +1,8 @@
-﻿using LojaRazor.Util;
+﻿using Site.Util;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace LojaRazor
+namespace Site
 {
     public class RouteConfig
     {

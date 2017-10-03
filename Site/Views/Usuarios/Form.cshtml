@@ -1,5 +1,4 @@
-﻿@using System.Web.Optimization
-@model LojaRazor.Models.Usuario
+﻿@model Site.Models.Usuario
 
 @using (Html.BeginForm("Cadastra", "Usuarios", FormMethod.Post))
 {
@@ -77,5 +76,5 @@
 
 @section Scripts{
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval")
 }

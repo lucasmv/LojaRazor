@@ -1,0 +1,14 @@
+﻿<div class="jumbotron">
+    <h2>Queima de estoque</h2>
+    <p>Promoção na seção de monitores</p>
+</div>
+<div class="row">
+    @foreach (var produto in ViewBag.Produtos)
+    {
+        <div class="col-md-4">
+            <h2>@produto.Nome</h2>
+            <p>@produto.Descricao</p>
+            <p>@produto.Preco</p>
+        </div>
+    }
+</div>

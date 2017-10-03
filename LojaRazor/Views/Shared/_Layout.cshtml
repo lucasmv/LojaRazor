@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
 
 <html lang="pt-br">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Loja Razor</title>
 
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/Style.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
 </head>
 <body>
     @Html.Partial("_MenuSuperior")
