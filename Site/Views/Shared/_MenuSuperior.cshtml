@@ -7,11 +7,11 @@
         </div>
         <ul class="nav navbar-nav">
             <li>@Html.ActionLink(Mensagens.Sobre, "About", "Home")</li>
-            <li>@Html.ActionLink(Mensagens.Contato, "Contato", "Home")</li>
+            <li>@Html.ActionLink(Mensagens.Contato, "Contact", "Home")</li>
 
             <li><a href="@Url.Action("SetCulture", "Home", new { culture = "pt-BR" })">Português</a></li>
             <li><a href="@Url.Action("SetCulture", "Home", new { culture = "en" })">English</a></li>
-            <li><a href="@Url.Action("SetCulture", "Home", new { culture = "es" })">Español</a></li>
+            <li class="hidden"><a href="@Url.Action("SetCulture", "Home", new { culture = "es" })">Español</a></li>
 
         </ul>
         <p class="navbar-text navbar-right">

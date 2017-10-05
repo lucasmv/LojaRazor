@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Site.Models
+namespace Model.Entities
 {
     public class Departamento
     {

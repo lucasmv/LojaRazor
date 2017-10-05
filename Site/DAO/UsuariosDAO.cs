@@ -6,14 +6,14 @@ namespace Site.DAO
 {
     public class UsuariosDAO
     {
-        public static IList<Usuario> Usuarios = new List<Usuario>();
+        public static IList<UsuarioDTO> Usuarios = new List<UsuarioDTO>();
 
-        public void Adiciona(Usuario u)
+        public void Adiciona(UsuarioDTO u)
         {
             Usuarios.Add(u);
         }
 
-        public Usuario Busca(string email, string senha)
+        public UsuarioDTO Busca(string email, string senha)
         {
             return Usuarios.Where(u => u.Email == email && u.Senha == senha).FirstOrDefault();
         }

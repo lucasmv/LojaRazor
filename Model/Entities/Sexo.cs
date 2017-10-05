@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Site.Models
+namespace Model.Entities
 {
     public enum Sexo
     {

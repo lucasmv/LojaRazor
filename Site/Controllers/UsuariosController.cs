@@ -8,7 +8,7 @@ namespace Site.Controllers
     {
         public ActionResult Form(string email)
         {
-            var usuario = new Usuario()
+            var usuario = new UsuarioDTO()
             {
                 Email = email
             };
@@ -17,7 +17,7 @@ namespace Site.Controllers
         }
 
         [HttpPost]
-        public ActionResult Cadastra(Usuario usuario)
+        public ActionResult Cadastra(UsuarioDTO usuario)
         {
             if (ModelState.IsValid)
             {

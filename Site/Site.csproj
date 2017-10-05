@@ -160,11 +160,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Categoria.cs" />
-    <Compile Include="Models\Departamento.cs" />
-    <Compile Include="Models\Produto.cs" />
-    <Compile Include="Models\Sexo.cs" />
-    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\CategoriaDTO.cs" />
+    <Compile Include="Models\DepartamentoDTO.cs" />
+    <Compile Include="Models\ProdutoDTO.cs" />
+    <Compile Include="Models\SexoDTO.cs" />
+    <Compile Include="Models\UsuarioDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Mensagens.Designer.cs">
       <DependentUpon>Mensagens.resx</DependentUpon>

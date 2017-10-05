@@ -5,9 +5,9 @@ namespace Site.DAO
 {
     public class DepartamentosDAO
     {
-        public IList<Departamento> Lista()
+        public IList<DepartamentoDTO> Lista()
         {
-            return new List<Departamento>()
+            return new List<DepartamentoDTO>()
             {
                 NovoDepartamento("Informática", "Notebooks", "Monitores", "HDs"),
                 NovoDepartamento("Eletrônicos", "TVs", "Rádios", "Video Cassete", "DVD Players"),
@@ -16,15 +16,15 @@ namespace Site.DAO
             };
         }
 
-        private Departamento NovoDepartamento(string nome, params string[] categorias)
+        private DepartamentoDTO NovoDepartamento(string nome, params string[] categorias)
         {
-            Departamento departamento = new Departamento
+            DepartamentoDTO departamento = new DepartamentoDTO
             {
                 Nome = nome
             };
 
             foreach (string nomeCategoria in categorias)
-                departamento.Categorias.Add(new Categoria(nomeCategoria));
+                departamento.Categorias.Add(new CategoriaDTO(nomeCategoria));
 
             return departamento;
         }

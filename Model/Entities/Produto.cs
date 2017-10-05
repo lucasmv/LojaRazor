@@ -1,4 +1,4 @@
-﻿namespace Site.Models
+﻿namespace Model.Entities
 {
     public class Produto
     {

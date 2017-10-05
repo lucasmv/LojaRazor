@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Site.Models
 {
-    public class Usuario
+    public class UsuarioDTO
     {
         [Required]
         [Display(Name = "Nome:")]
@@ -38,6 +38,6 @@ namespace Site.Models
 
         public bool RecebePromocoes { get; set; }
 
-        public Sexo Sexo { get; set; }
+        public SexoDTO Sexo { get; set; }
     }
 }
